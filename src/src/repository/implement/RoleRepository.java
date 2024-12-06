@@ -51,12 +51,12 @@ public class RoleRepository implements IRoleRepository {
         return false;
     }
 
-    public Boolean put(String name, int id) {
+    public Boolean put(Role role, int id) {
         String query = "UPDATE tb_role SET name = ? WHERE id = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, name);
+            preparedStatement.setString(1, role.getName());
+            preparedStatement.setInt(2, id);
             Integer result = preparedStatement.executeUpdate();
             return result > 0;
         } catch (Exception e) {
