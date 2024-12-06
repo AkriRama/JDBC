@@ -85,4 +85,18 @@ public class RoleRepository implements IRoleRepository {
 
         return role;
     }
+
+    public Boolean delete(int id) {
+        String query = "DELETE FROM tb_role WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            Integer result = preparedStatement.executeUpdate();
+            return result > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
 }
