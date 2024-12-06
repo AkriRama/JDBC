@@ -9,7 +9,9 @@ public interface IRoleRepository {
 
     public Boolean post(Role role);
 
-    public Boolean put(String name, int id);
+    public Boolean put(Role role, int id);
 
     public Role getById(int id);
+
+    public Boolean delete(int id);
 }
