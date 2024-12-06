@@ -27,10 +27,10 @@ public class RoleController {
     public void put() {
         Role role = new Role();
         role.setId(0);
-        role.setName("Non-Membership");
+        role.setName("Membership");
 
-        Boolean result = roleRepository.post(role);
-        String res = result ? "insert data berhasil" : "insert data gagal";
+        Boolean result = roleRepository.put(role, 3);
+        String res = result ? "update data berhasil" : "update data gagal";
         System.out.println(res);
     }
 
