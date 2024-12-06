@@ -44,4 +44,11 @@ public class RoleController {
 
         }
     }
+
+    public void delete() {
+        Boolean result = roleRepository.delete(3);
+        String res = result ? "delete data berhasil" : "delete data gagal";
+        System.out.println(res);
+    }
+
 }
