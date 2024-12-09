@@ -2,10 +2,12 @@ package controller;
 
 import model.Role;
 import repository.implement.RoleRepository;
+import repository.implement.UserRepository;
 import utils.DbConnection;
 
 public class RoleController {
     RoleRepository roleRepository = new RoleRepository(DbConnection.getConnection());
+    UserRepository userRepository = new UserRepository(DbConnection.getConnection());
 
     public void get() {
         for (Role role : roleRepository.get()) {
@@ -46,7 +48,8 @@ public class RoleController {
     }
 
     public void delete() {
-        Boolean result = roleRepository.delete(3);
+        userRepository.deleteByRoleId(5);
+        Boolean result = roleRepository.delete(5);
         String res = result ? "delete data berhasil" : "delete data gagal";
         System.out.println(res);
     }
