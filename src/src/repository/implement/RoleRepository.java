@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Role;
-import repository.IRoleRepository;
+import repository.IRepository;
 
-public class RoleRepository implements IRoleRepository {
+public class RoleRepository implements IRepository {
     private Connection connection;
 
     public RoleRepository(Connection connection) {
