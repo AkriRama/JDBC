@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.Role;
 
-public interface IRoleRepository {
+public interface IRepository {
     public List<Role> get();
 
     public Boolean post(Role role);
